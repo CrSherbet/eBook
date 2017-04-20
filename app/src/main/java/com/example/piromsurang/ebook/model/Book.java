@@ -17,4 +17,36 @@ public class Book {
         this.id = id;
         this.title = title;
     }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getImg_url() {
+        return img_url;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setImg_url(String url) {
+        this.img_url = url;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }
