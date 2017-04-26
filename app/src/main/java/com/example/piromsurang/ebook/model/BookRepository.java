@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by Piromsurang on 4/20/2017 AD.
  */
 
-public class BookRepository {
+public class BookRepository implements Repository {
 
     private ArrayList<Book> books;
     private static BookRepository instance = null;

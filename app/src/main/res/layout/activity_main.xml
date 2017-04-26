@@ -12,9 +12,9 @@
         android:layout_height="wrap_content"
         android:text="Book" />
 
-    <TextView
+    <ListView
         android:id="@+id/list_books"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></TextView>
+        android:layout_height="wrap_content"></ListView>
 
 </LinearLayout>

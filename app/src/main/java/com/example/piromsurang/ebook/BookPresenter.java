@@ -1,5 +1,7 @@
 package com.example.piromsurang.ebook;
 
+import android.widget.ArrayAdapter;
+
 import com.example.piromsurang.ebook.model.Book;
 import com.example.piromsurang.ebook.model.BookRepository;
 
@@ -20,13 +22,7 @@ public class BookPresenter {
     }
 
     public void printList() {
-        ArrayList<Book> list = repository.getBookList();
-        String result = "";
-        for( int i = 0 ; i < list.size() ; i++ ) {
-            result += "Title: " + list.get(i).getTitle() + " Price: " + list.get(i).getPrice() + "\n";
-        }
-
-        view.showList(result);
+        view.showList(repository.getBookList());
     }
 
 }
