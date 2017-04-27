@@ -1,9 +1,6 @@
 package com.example.piromsurang.ebook;
 
-import android.widget.ArrayAdapter;
-
 import com.example.piromsurang.ebook.model.Book;
-import com.example.piromsurang.ebook.model.BookRepository;
 
 import java.util.ArrayList;
 

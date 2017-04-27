@@ -5,17 +5,18 @@ package com.example.piromsurang.ebook.model;
  */
 
 public class Book {
-
-    private double price;
-    private String img_url;
-    private String id;
     private String title;
+    private String id;
+    private double price;
+    private int pub_year;
+    private String img_url;
 
-    public Book( double price, String img_url, String id, String title ) {
-        this.price = price;
-        this.img_url = img_url;
-        this.id = id;
+    public Book(String title, String id, double price, int pub_year, String img_url) {
         this.title = title;
+        this.id = id;
+        this.price = price;
+        this.pub_year = pub_year;
+        this.img_url = img_url;
     }
 
     public double getPrice() {

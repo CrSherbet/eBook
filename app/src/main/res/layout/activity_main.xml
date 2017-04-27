@@ -8,6 +8,7 @@
     tools:context="com.example.piromsurang.ebook.MainActivity">
 
     <TextView
+        android:id="@+id/textHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Book" />

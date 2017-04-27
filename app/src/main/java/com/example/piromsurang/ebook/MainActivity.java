@@ -2,19 +2,19 @@ package com.example.piromsurang.ebook;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.piromsurang.ebook.model.Book;
-import com.example.piromsurang.ebook.model.BookRepository;
+import com.example.piromsurang.ebook.model.MockUpBookRep;
+import com.example.piromsurang.ebook.model.RealBookRep;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements BookView {
 
-    private BookRepository repository;
+    private RealBookRep repository;
     private BookPresenter presenter;
 
     @Override
@@ -22,9 +22,11 @@ public class MainActivity extends AppCompatActivity implements BookView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        repository = BookRepository.getInstance();
+        TextView textView = (TextView) findViewById(R.id.textHead);
+        repository = RealBookRep.getInstance();
         presenter = new BookPresenter(repository, this);
-        presenter.printList();
+        textView.setText("HI2");
+
     }
 
     @Override
