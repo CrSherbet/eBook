@@ -1,7 +1,7 @@
 package com.example.piromsurang.ebook.model;
 
 import android.os.AsyncTask;
-
+import java.lang.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,7 +13,12 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Observable;
+
+import static java.util.Collections.sort;
 
 /**
  * Created by waris on 4/26/2017.
@@ -100,18 +105,36 @@ public class RealBookRep extends Observable implements Repository {
                     result.add(b);
                 }
             }
+            Collections.sort(result, new TitleComparator());
         } else {
             for (Book b : books) {
                 if((b.getPubYear()+"").contains(text)) {
                     result.add(b);
                 }
             }
+            Collections.sort(result, new YearComparator());
         }
         return result;
     }
 
+    public class TitleComparator implements Comparator<Book> {
+        @Override
+        public int compare(Book b1, Book b2) {
+            return b1.getTitle().compareTo(b2.getTitle());
+        }
+    }
+
+
+    public class YearComparator implements Comparator<Book> {
+        @Override
+        public int compare(Book b1, Book b2) {
+            return ((Integer)b1.getPubYear()).compareTo(b2.getPubYear());
+        }
+    }
+
     @Override
     public ArrayList<Book> getBookList() {
+        Collections.sort(books, new TitleComparator());
         return books;
     }
 }

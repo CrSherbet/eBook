@@ -1,10 +1,12 @@
 package com.example.piromsurang.ebook.model;
 
+import java.util.Comparator;
+
 /**
  * Created by Piromsurang on 4/20/2017 AD.
  */
 
-public class Book {
+public class Book  {
     private String title;
     private String id;
     private double price;
