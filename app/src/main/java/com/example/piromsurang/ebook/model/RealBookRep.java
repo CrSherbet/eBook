@@ -92,6 +92,24 @@ public class RealBookRep extends Observable implements Repository {
         }
     }
 
+    public ArrayList<Book> search(String type ,String text){
+        ArrayList<Book> result = new ArrayList<Book>();
+        if(type.equals("Title")) {
+            for (Book b : books) {
+                if (b.getTitle().contains(text)) {
+                    result.add(b);
+                }
+            }
+        } else {
+            for (Book b : books) {
+                if((b.getPubYear()+"").contains(text)) {
+                    result.add(b);
+                }
+            }
+        }
+        return result;
+    }
+
     @Override
     public ArrayList<Book> getBookList() {
         return books;

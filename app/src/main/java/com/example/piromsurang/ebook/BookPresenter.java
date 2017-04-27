@@ -34,4 +34,9 @@ public class BookPresenter implements Observer {
     public void update(Observable o, Object arg) {
         printList();
     }
+
+    public void search(String type, String title){
+        view.showList(repository.search(type,title));
+    }
+
 }

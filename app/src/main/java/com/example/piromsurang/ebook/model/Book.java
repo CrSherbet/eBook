@@ -35,6 +35,14 @@ public class Book {
         return title;
     }
 
+    public int getPubYear() {
+        return pub_year;
+    }
+
+    public void setPubYear(int year) {
+        this.pub_year = year;
+    }
+
     public void setPrice(double price) {
         this.price = price;
     }
@@ -52,6 +60,6 @@ public class Book {
     }
 
     public String toString(){
-        return "Title: " + title + "  Price: " + price ;
+        return "Title: " + title + "  Year: " + pub_year + "  \nPrice: " + price  ;
     }
 }
